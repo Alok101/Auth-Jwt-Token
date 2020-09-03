@@ -11,9 +11,11 @@ namespace Auth.Demo.Controllers
     public class TokenController : ControllerBase
     {
         private readonly IJwtAuthenticationManager jwtAuthenticationManager;
-        public TokenController(IJwtAuthenticationManager jwtAuthenticationManager)
+        private readonly ITokenRefresher tokenRefresher;
+        public TokenController(IJwtAuthenticationManager jwtAuthenticationManager, ITokenRefresher tokenRefresher)
         {
             this.jwtAuthenticationManager = jwtAuthenticationManager;
+            this.tokenRefresher = tokenRefresher;
         }
         // GET: api/Token
         [HttpGet]
@@ -26,6 +28,15 @@ namespace Auth.Demo.Controllers
         public IActionResult Authenticate([FromBody]UserCred userCred)
         {
            var token= jwtAuthenticationManager.Authenticate(userCred.UserName, userCred.Password);
+            if (token == null)
+                return Unauthorized();
+            return Ok(token);
+        }
+        [AllowAnonymous]
+        [HttpPost("refresh")]
+        public IActionResult Refresh([FromBody]RefreshCred refreshCred)
+        {
+            var token = tokenRefresher.Refresh(refreshCred);
             if (token == null)
                 return Unauthorized();
             return Ok(token);

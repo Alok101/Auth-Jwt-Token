@@ -6325,11 +6325,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Programming\\Programming_Practice\\Jwt\\Auth.Demo\\Auth.Demo\\Auth.Demo.csproj",
+      "projectUniqueName": "E:\\Programming\\Programming_Practice\\Jwt\\Auth-Jwt-Token\\Auth.Demo\\Auth.Demo\\Auth.Demo.csproj",
       "projectName": "Auth.Demo",
-      "projectPath": "E:\\Programming\\Programming_Practice\\Jwt\\Auth.Demo\\Auth.Demo\\Auth.Demo.csproj",
+      "projectPath": "E:\\Programming\\Programming_Practice\\Jwt\\Auth-Jwt-Token\\Auth.Demo\\Auth.Demo\\Auth.Demo.csproj",
       "packagesPath": "C:\\Users\\Alok Gautam\\.nuget\\packages\\",
-      "outputPath": "E:\\Programming\\Programming_Practice\\Jwt\\Auth.Demo\\Auth.Demo\\obj\\",
+      "outputPath": "E:\\Programming\\Programming_Practice\\Jwt\\Auth-Jwt-Token\\Auth.Demo\\Auth.Demo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
